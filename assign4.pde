@@ -3,7 +3,7 @@ PImage bg1, bg2, en, fi, hp, tr, s1, s2, e1, e2, shoot;
 PImage [] bomb = new PImage[5];
 int fx=589, fy=300, x=640, enemyX=0, enemyY=floor(random(420));//fighter(x,y), x for bg
 int speed=3, blood=2, img=0, shot=0;
-float b=random(600), c=random(440);//treasure(b,c)
+float tx=random(600), ty=random(440);//treasure(b,c)
 int FRAMERATE = 100;
 int enemystate = 0;
 int [][] epos = new int[8][2];
@@ -108,12 +108,12 @@ void draw() {
       fy = 429;
 
     /* treasure */
-    image(tr, b, c);
-    if (fx+50>b && fy+50>c && fx<b+40 && fy<c+40) {
+    image(tr, tx, ty);
+    if (fx+50>tx && fy+50>ty && fx<tx+40 && fy<ty+40) {
       if (blood<10)
         blood += 1;
-      b = random(600);
-      c = random(440);
+      tx = random(600);
+      ty = random(440);
     }
 
     /* enemy */
@@ -234,8 +234,8 @@ void draw() {
           fy=300;
           enemyY=floor(random(420));
           enemyX=0;
-          b=random(600);
-          c=random(440);
+          tx=random(600);
+          ty=random(440);
           gameState = GAME_PLAYING;
           enemystate = 0;
           shot = 0;
