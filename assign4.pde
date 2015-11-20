@@ -130,12 +130,12 @@ void draw() {
           isdead[a] = true;
       }
       if (enemystate==1) {
-        enemyY = floor(random(300));
+        enemyY = floor(random(260));
         for (int a=5; a<8; a++)
           isdead[a] = true;
       }
       if (enemystate==2) {
-        enemyY = floor(random(60, 360));
+        enemyY = floor(random(80, 340));
       }
       epos[0][1] = enemyY;
     }
